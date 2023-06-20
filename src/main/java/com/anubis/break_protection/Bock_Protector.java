@@ -1,8 +1,8 @@
-package com.anubis.bock_protector;
+package com.anubis.break_protection;
 
 import org.slf4j.Logger;
 
-import com.anubis.bock_protector.configs.Config;
+import com.anubis.break_protection.configs.Config;
 import com.mojang.logging.LogUtils;
 
 import net.minecraftforge.common.MinecraftForge;
