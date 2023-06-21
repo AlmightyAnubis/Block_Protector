@@ -33,20 +33,28 @@ public class BlockBreakListener {
 
 		BlockPos pos = blockHitResult.getBlockPos();
 		Block block = mc.level.getBlockState(pos).getBlock();
-		
-		ArrayList<Reference<Block>> copyBlocks  = new ArrayList<>();
+
+		if (checkBlock(block)) {
+			event.setCanceled(true);
+			event.setSwingHand(false);
+		}
+
+	}
+	
+	public static boolean checkBlock(Block block) {
+		ArrayList<Reference<Block>> copyBlocks = new ArrayList<>();
 		copyBlocks.addAll(ClientSetup.protBlocks);
-		copyBlocks.removeIf((element) ->{
+		copyBlocks.removeIf((element) -> {
 			if (element.get().equals(block)) {
 				return false;
 			}
 			return true;
 		});
 		if (!copyBlocks.isEmpty()) {
-			event.setCanceled(true);
-			event.setSwingHand(false);
+			return true;
 		}
-
+		return false;
 	}
+
 
 }
