@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '1.1'
+version = '1.2'
 group = 'com.anubis.break_protection' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'break_protection-1.20.1'
 
