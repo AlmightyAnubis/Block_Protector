@@ -30,7 +30,7 @@ public class RegisterCommands {
 		CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
 		dispatcher.register(Commands.literal("blockprotection").then(
 				Commands.literal("add").then(Commands.argument("targetblock", BlockPosArgument.blockPos()).executes((ctx) -> {
-					BlockPos pos = BlockPosArgument.getLoadedBlockPos(ctx, "targetblock");
+					BlockPos pos = BlockPosArgument.getBlockPos(ctx, "targetblock");
 					if (ctx.getSource() instanceof ClientCommandSourceStack) {
 						Block block = mc.level.getBlockState(pos).getBlock();
 						String reg = ForgeRegistries.BLOCKS.getResourceKey(block).get().location().toString();
@@ -58,7 +58,7 @@ public class RegisterCommands {
 					return 1;
 				}))).then(Commands.literal("remove")
 						.then(Commands.argument("targetblock", BlockPosArgument.blockPos()).executes((ctx) -> {
-							BlockPos pos = BlockPosArgument.getLoadedBlockPos(ctx, "targetblock");
+							BlockPos pos = BlockPosArgument.getBlockPos(ctx, "targetblock");
 							if (ctx.getSource() instanceof ClientCommandSourceStack) {
 								Block block = mc.level.getBlockState(pos).getBlock();
 								String reg = ForgeRegistries.BLOCKS.getResourceKey(block).get().location().toString();
