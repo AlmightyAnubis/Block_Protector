@@ -6,7 +6,7 @@ plugins {
 
 version = '1.2'
 group = 'com.anubis.break_protection' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'break_protection-1.20.1'
+archivesBaseName = 'break_protection-1.20.2'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -26,7 +26,7 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'official', version: '1.20.1'
+    mappings channel: 'official', version: '1.20.2'
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
